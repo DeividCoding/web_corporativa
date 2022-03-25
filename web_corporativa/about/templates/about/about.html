@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Acerca de{% endblock %}
+
+{% block imagenPortada %} {{imagenPortada.url}}  {% endblock %}
+
+
+{% block cabezeras %}
+    <h1 style="font-size:40px;" >{{NOMBRE}}</h1>
+    <span class="subheading">{{SECTOR}}</span>
+{% endblock %}
+
+{% block content %}
+<div class="row"> 
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar"  src="{{foto.url}}" alt=""> 
+        <!-- <img class="img-fluid avatar"  src="{% static 'core/img/avatar.jpg' %}" alt=""> -->
+    </div>
+    <div class="col-lg-7 col-md-8">
+         <!--<h2 class="section-heading">{{NOMBRE}}</h2> -->
+        <p>{{descripccion|safe}}</p>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

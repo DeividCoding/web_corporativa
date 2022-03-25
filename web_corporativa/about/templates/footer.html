@@ -1,0 +1,145 @@
+<!-- 
+    Pié de página
+    iconos: https://fontawesome.com/v4.7/icons/
+    https://www.w3schools.com/bootstrap/bootstrap_ref_js_modal.asp   abrir modals...
+
+-->
+
+{% load static %}
+
+<footer class="footer text-faded text-center py-5">
+    <div class="container">
+        <p class="m-0">
+
+            {% if CONTACTO_Facebook %}
+            <a href="{{CONTACTO_Facebook}}" class="link">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+            {% if CONTACTO_Youtube %}
+            <a href="{{CONTACTO_Youtube}}" class="link">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+            {% if CONTACTO_Instragram %}
+            <a href="{{CONTACTO_Instragram}}" class="link">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+
+            {% if CONTACTO_LinkedIn %}
+            <a href="{{CONTACTO_LinkedIn}}" class="link">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+
+            
+            {% endif %}
+
+            {% if CONTACTO_Twitter %}
+            <a href="{{CONTACTO_Twitter}}" class="link">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+
+            {% if CONTACTO_Github %}
+            <a href="{{CONTACTO_Github}}" class="link">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+
+            {% if NUMERO_TELEFONO %}
+            <a data-toggle="modal" href="#exampleModal" >
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+    
+
+            {% if CORREO %}
+            <a data-toggle="modal" href="#modalCorreo" >
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            {% endif %}
+
+            
+        </p>
+
+        <p class="m-0 mbt1">&copy; Roni Hernández Web empresarial </p>
+    </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Numero de telefono</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           {{NUMERO_TELEFONO}}
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
+          <!-- <button type="button" class="btn btn-primary">c</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <div class="modal fade" id="modalCorreo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Correo electronico</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           {{CORREO}}
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
+          <!-- <button type="button" class="btn btn-primary">c</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</footer>

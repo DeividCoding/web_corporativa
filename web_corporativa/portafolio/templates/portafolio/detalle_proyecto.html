@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{object.titulo|truncatechars:30}}{% endblock %}
+{% block imagenPortada %} {{imagenPortada.url}}  {% endblock %}
+
+
+<!--
+
+
+    https://www.bootdey.com/snippets/view/bs5-team-member-details
+    https://www.bootdey.com/snippets/view/user-profile-details
+
+
+-->
+
+{% block cabezeras %}
+    <h1 style="font-size:40px;" > Proyecto </h1>
+    
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+            <div class="card border-0 shadow">
+                <img  src="{{object.imagen.url}}" alt="...">
+                <div class="card-body p-1-9 p-xl-5">        
+                    <ul class="list-unstyled mb-4 mt-2">
+                        <li class="mb-3"><i class="fa fa-calendar display-25 me-3 text-secondary"> Publicación: {{object.created}}</i></li>
+                        <li class="mb-3"><i class="fa fa-calendar display-25 me-3 text-secondary"> Ultima modificación: {{object.modified}}</i></li>
+                        <li class="mb-3"><i class="fa fa-star-o display-25 me-3 text-secondary"> Estrellas (1-5): {{object.calificacionCliente}}</i></li>
+                        <li class="mb-3"><i class="fa fa-thumbs-o-up display-25 me-3 text-secondary"> Likes: {{object.likes}}</i></li>
+                        <li class="mb-3"><i class="fa fa-eye display-25 me-3 text-secondary">Visitas: {{object.visitas}}</i></li>
+                    </ul>
+
+                    <div class="mb-4">
+                        <h3 class="h4 mb-0">Categorias:</h3>
+                        {% for cadaCategoria in object.categorias.all %}
+                        <a  href="{% url 'portafolio_app:portafolio-inicio' %}?categoria={{cadaCategoria.id}}" class="badge badge-primary mr-1 my-1">{{cadaCategoria|truncatechars:30}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="ps-lg-1-6 ps-xl-5">
+                <div class="mb-5 wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="h1 mb-0 text-primary">{{object.titulo}}</h2>
+                    </div>
+                    <p>{{object.contenido|safe}}</p>
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

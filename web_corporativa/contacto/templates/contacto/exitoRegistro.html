@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contacto{% endblock %}
+{% block imagenPortada %} {{imagenPortada.url}}  {% endblock %}
+{% block cabezeras %}
+    <h1>Contacto</h1>
+    <span class="subheading">Asesoría</span>
+{% endblock %}
+{% block content %}
+        <div class="row">
+          <div class="col-xl-12 col-lg-10 mx-auto">
+            <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <!-- <span class="section-heading-upper">Envíanos tus dudas</span>
+                  <span class="section-heading-lower">Contacto</span> -->
+                  {{mensajeRecibido}}
+                </h2>
+            </div>
+          </div>
+        </div>
+
+
+{% endblock %}
+
+
+
+
+
+
