@@ -46,7 +46,12 @@
                     <div class="body">
                         <div class="img-post">
                             <!-- SEGURENCIA DE TAMAÑO width="800" height="280"   -->
+                            {%if cadaArticulo.imagen %}
                             <img class="d-block img-fluid" src="{{cadaArticulo.imagen.url}}" width="800" height="280" alt="First slide">
+                            {% else %}
+                            <img class="d-block img-fluid" width="800" height="280" alt="SIN IMAGEN....">
+                            {% endif %}
+            
                         </div>
                         <h3><a href="{% url 'portafolio_app:portafolio-articuloDetail' cadaArticulo.id %}" >{{cadaArticulo.titulo}}</a></h3>
                         <p class="card-text"><small class="text-muted">{{cadaArticulo.created|date:"d/F/Y"}}</small></p>
@@ -216,8 +221,20 @@
 
                                    <div class="img-post">
                                        <!-- SEGURENCIA DE TAMAÑO width="280" height="280"   -->
-                                       <img src="{{cadaArticulo.imagen.url}}"  width="280" height="280" alt="Awesome Image">                                        
-                                   </div>                                            
+                   
+                                       {%if cadaArticulo.imagen %}
+                                       <img  src="{{cadaArticulo.imagen.url}}"  width="280" height="280" alt="First slide">
+                                       {% else %}
+                                       <img  width="280" height="280" alt="SIN IMAGEN....">
+                                       {% endif %}
+                       
+
+                                   </div>      
+                                   
+
+
+
+
                                </div>
                                {% endfor %}
 
@@ -253,8 +270,14 @@
 
 
                                    <div class="img-post">
-                                       <!-- SEGURENCIA DE TAMAÑO width="280" height="280"   -->
-                                       <img src="{{cadaArticulo.imagen.url}}"  width="280" height="280" alt="Awesome Image">                                        
+                                       <!-- SEGURENCIA DE TAMAÑO width="280" height="280"   -->                            
+                                       {%if cadaArticulo.imagen %}
+                                       <img  src="{{cadaArticulo.imagen.url}}"  width="280" height="280" alt="First slide">
+                                       {% else %}
+                                       <img  width="280" height="280" alt="SIN IMAGEN....">
+                                       {% endif %}
+                       
+           
                                    </div>                                            
                                </div>
                                {% endfor %}

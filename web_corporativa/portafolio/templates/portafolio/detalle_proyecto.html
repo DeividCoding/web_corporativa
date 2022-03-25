@@ -25,7 +25,13 @@
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
             <div class="card border-0 shadow">
-                <img  src="{{object.imagen.url}}" alt="...">
+
+                {%if object.imagen %}
+                <img  src="{{object.imagen.url}}" >
+                {% else %}
+                <img   alt="SIN IMAGEN...">
+                {% endif %}
+                
                 <div class="card-body p-1-9 p-xl-5">        
                     <ul class="list-unstyled mb-4 mt-2">
                         <li class="mb-3"><i class="fa fa-calendar display-25 me-3 text-secondary"> Publicación: {{object.created}}</i></li>
